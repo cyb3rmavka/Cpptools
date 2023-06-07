@@ -19,6 +19,17 @@ namespace tools {
         return substrings;
     }
 
+    std::string combineStrings(const std::vector<std::string>& strings) {
+        std::string combinedString;
+        combinedString.reserve(256);
+
+        for (const auto& str : strings) {
+            combinedString += str;
+        }
+
+        return combinedString;
+    }
+
 }
 
 #endif
