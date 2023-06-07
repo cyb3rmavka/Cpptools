@@ -1,0 +1,5 @@
+
+#ifndef CPPTOOLS_STRING_TOOLS_H
+#define CPPTOOLS_STRING_TOOLS_H
+
+#endif
