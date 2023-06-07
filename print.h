@@ -1,4 +1,3 @@
-
 #ifndef CPPTOOLS_PRINT_H
 #define CPPTOOLS_PRINT_H
 
