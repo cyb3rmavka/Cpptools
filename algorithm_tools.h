@@ -5,4 +5,4 @@ namespace tools{
 
 }
 
-#endif //CPPTOOLS_ALGORITHM_TOOLS_H
+#endif
