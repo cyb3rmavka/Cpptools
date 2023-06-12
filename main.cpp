@@ -8,7 +8,9 @@
 #include "print.h"
 
 int main(){
-    // Example usage
+
+
+    // Example usage print()
 
     std::vector<std::vector<int>> vec = {{1,2}, {3, 4}};
     tools::print(vec);
@@ -39,7 +41,5 @@ int main(){
     tools::print(testData);
     tools::print(floatData);
     tools::print(vectorData);
-
-
     return 0;
 }
