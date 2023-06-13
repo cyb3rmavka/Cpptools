@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <sstream>
+#include <unordered_set>
 
 namespace tools {
 
@@ -29,30 +30,25 @@ namespace tools {
 
         return combinedString;
     }
-    std::string cutWords(const std::string& input, const std::vector<std::string>& wordsToCut) {
+
+    std::string cutWords(const std::string& input, const std::unordered_set<std::string>& wordsToCut) {
         std::stringstream ss(input);
         std::string word;
         std::string result;
 
         while (ss >> word) {
-            bool cutWord = false;
-
-            for (const auto& wordToCut : wordsToCut) {
-                if (word == wordToCut) {
-                    cutWord = true;
-                    break;
-                }
-            }
-
-            if (!cutWord) {
-                result += word + " ";
+            if (wordsToCut.find(word) == wordsToCut.end()) {
+                result += std::move(word) + " ";
             }
         }
 
-        result.pop_back();  // Remove the trailing space
+        if (!result.empty()) {
+            result.pop_back();  // Remove the trailing space
+        }
 
         return result;
     }
+
 
 
 }
