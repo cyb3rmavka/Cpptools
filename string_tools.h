@@ -29,6 +29,31 @@ namespace tools {
 
         return combinedString;
     }
+    std::string cutWords(const std::string& input, const std::vector<std::string>& wordsToCut) {
+        std::stringstream ss(input);
+        std::string word;
+        std::string result;
+
+        while (ss >> word) {
+            bool cutWord = false;
+
+            for (const auto& wordToCut : wordsToCut) {
+                if (word == wordToCut) {
+                    cutWord = true;
+                    break;
+                }
+            }
+
+            if (!cutWord) {
+                result += word + " ";
+            }
+        }
+
+        result.pop_back();  // Remove the trailing space
+
+        return result;
+    }
+
 
 }
 
