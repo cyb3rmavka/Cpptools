@@ -3,6 +3,7 @@
 
 #include <filesystem>
 #include <algorithm>
+#include <vector>
 
 namespace tools{
 
@@ -25,6 +26,19 @@ namespace tools{
 
             return formattedPath;
         }
+
+        std::vector<std::string> getDirectoryNames(const std::string& directoryPath) {
+            std::vector<std::string> directoryNames;
+
+            for (const auto& entry : std::filesystem::directory_iterator(directoryPath)) {
+                if (entry.is_directory()) {
+                    directoryNames.push_back(entry.path().filename().string());
+                }
+            }
+
+            return directoryNames;
+        }
+
     }
 
 }
